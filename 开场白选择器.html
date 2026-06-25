@@ -1,0 +1,113 @@
+```html
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>倾橙映曦·沉墨倒念</title><style>
+[data-bp]{--bg:linear-gradient(145deg,#f0f7ff,#e4f0fa 40%,#f5faff);--card:rgba(255,255,255,.82);--bd:rgba(150,200,240,.25);--txt:#2d4a6f;--txt2:#6a8aaa;--txt3:#8aaac8;--ac:#5b9bd5}
+[data-bp].pk{--bg:linear-gradient(145deg,#fef5f8,#fce8f0 40%,#fff5f8);--bd:rgba(232,135,168,.22);--ac:#e887a8;--txt:#6b3a4f;--txt2:#996677;--txt3:#b88a9a}
+[data-bp].dk{--bg:linear-gradient(145deg,#1a1a2e,#16213e 40%,#1a1a2e);--card:rgba(30,30,50,.85);--bd:rgba(120,130,200,.18);--ac:#8b7cf0;--txt:#e0e0f0;--txt2:#a0a0c0;--txt3:#7070a0}
+*{margin:0;padding:0;box-sizing:border-box}body{background:transparent}
+.kcb-wrap{position:relative;overflow:hidden;padding:36px 24px;font-family:"Microsoft YaHei","Noto Serif SC",serif;background:var(--bg);color:var(--txt)}
+#kcb-particles{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.kcb-seal,.kcb-tags,.kcb-section,.kcb-grid,.kcb-status{position:relative;z-index:1}
+.kcb-seal{border:1px solid var(--bd);background:var(--card);padding:22px 28px;margin-bottom:32px;border-radius:12px;text-align:center}
+.kcb-title-main{font-size:22px;font-weight:700;color:var(--ac);letter-spacing:8px}
+.kcb-title-sub{font-size:12px;color:var(--txt2);letter-spacing:4px;margin-top:4px}
+.kcb-poem{font-size:11px;color:var(--txt3);letter-spacing:2px;margin-top:8px;line-height:1.8}
+.kcb-poem .c1{color:var(--ac)}.kcb-poem .c2{color:var(--txt2)}.kcb-poem .c3{color:#6a9fc0}.kcb-poem .c4{color:#c86a98}
+.kcb-thread{height:2px;margin:14px auto 0;max-width:240px;background:linear-gradient(90deg,transparent,var(--ac),transparent);opacity:.5}
+.kcb-tags{display:flex;gap:10px;margin-bottom:32px;flex-wrap:wrap}
+.kcb-tag{background:rgba(91,155,213,.08);color:var(--ac);border:1px solid var(--bd);padding:7px 14px;border-radius:8px;font-size:12px;letter-spacing:1px}
+.kcb-section{text-align:center;margin-bottom:24px;padding:0 40px;color:var(--txt2);font-size:14px;letter-spacing:4px}
+.kcb-section::before,.kcb-section::after{content:"";position:absolute;top:50%;width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--ac))}
+.kcb-section::before{left:0}.kcb-section::after{right:0}
+.kcb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kcb-card{background:var(--card);border:1px solid var(--bd);padding:18px 20px;border-radius:10px;cursor:pointer;transition:all .35s;position:relative;overflow:hidden}
+.kcb-card::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--ac),var(--ac));opacity:0;transition:opacity .35s}
+.kcb-card:hover::before{opacity:1}.kcb-card:hover{border-color:var(--ac);transform:translateY(-2px)}
+.kcb-card.kcb-clicked{pointer-events:none;opacity:.5}
+.kcb-num{position:absolute;top:6px;right:10px;font-size:11px;color:var(--txt3)}
+.kcb-card-title{color:var(--ac);font-size:15px;margin-bottom:8px;display:flex;align-items:center;font-weight:500}
+.kcb-card-title .dot{display:inline-block;width:5px;height:5px;background:var(--ac);border-radius:50%;margin-right:8px}
+.kcb-desc{color:var(--txt2);font-size:12px;line-height:1.7}
+.kcb-meta{margin-top:8px;font-size:10px;color:var(--txt3)}
+.kcb-status{margin-top:24px;padding:10px 14px;background:var(--card);border-radius:8px;font-size:12px;color:var(--txt3);text-align:center;border:1px solid var(--bd)}
+.kcb-status.switching{color:var(--ac);border-color:var(--ac)}
+.kcb-portraits{margin-top:28px;padding-top:24px;border-top:1px solid var(--bd);display:none}
+.kcb-portraits.open{display:block}
+.kcb-portrait-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.kcb-portrait{background:var(--card);border:1px solid var(--bd);border-radius:8px;overflow:hidden;cursor:pointer}
+.kcb-portrait:hover{border-color:var(--ac);transform:translateY(-2px)}
+.kcb-portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.kcb-portrait-name{text-align:center;padding:8px 0;font-size:11px;color:var(--txt2);letter-spacing:2px}
+.kcb-gallery-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.kcb-gallery-tab{padding:4px 12px;font-size:11px;border-radius:6px;border:1px solid var(--bd);background:var(--card);color:var(--txt3);cursor:pointer}
+.kcb-gallery-tab:hover,.kcb-gallery-tab.active{border-color:var(--ac);color:var(--ac)}
+.kcb-gallery-btn{position:absolute;top:12px;right:14px;z-index:2;padding:5px 12px;font-size:11px;border-radius:6px;border:1px solid var(--bd);background:var(--card);color:var(--txt2);cursor:pointer}
+.kcb-img-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+#img-check:checked~.kcb-img-modal{display:flex}
+.kcb-modal-inner img{max-width:100%;max-height:85vh;display:block;border-radius:6px}
+.kcb-modal-close{position:absolute;top:16px;right:22px;color:rgba(255,255,255,.6);font-size:28px;cursor:pointer}
+.th-dot{display:inline-block;width:16px;height:16px;border-radius:50%;border:2px solid var(--bd);cursor:pointer;transition:transform .2s;vertical-align:middle;margin-left:4px}
+.th-dot:hover{transform:scale(1.15)}.th-dot.active{border-color:var(--ac)!important}
+@media(max-width:768px){.kcb-wrap{padding:16px}.kcb-grid{grid-template-columns:1fr}.kcb-portrait-grid{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<div class="kcb-wrap" data-bp="1">
+<canvas id="kcb-particles"></canvas>
+<button class="kcb-gallery-btn" id="kcb-gallery-toggle">🎨 立绘</button>
+<div class="kcb-seal">
+<div class="kcb-title-main">倾橙映曦 · 沉墨倒念</div>
+<div class="kcb-title-sub">— 我最讨厌的三个喜欢欺负我的女生 —</div>
+<div class="kcb-poem"><span class="c1">曦</span>光倾进<span class="c2">橙</span>的缝隙 · <span class="c3">墨</span>色倒悬<span class="c4">念</span>的深渊</div>
+<div class="kcb-thread"></div>
+<div style="position:absolute;top:8px;right:10px">
+<span class="th-dot" style="background:#5b9bd5" data-t="blue"></span>
+<span class="th-dot" style="background:#e887a8" data-t="pink"></span>
+<span class="th-dot" style="background:#8b7cf0" data-t="dark"></span>
+</div>
+</div>
+<div class="kcb-tags"><span class="kcb-tag">日式校园</span><span class="kcb-tag">四人百合</span><span class="kcb-tag">暗恋与控制</span><span class="kcb-tag">十年暗线</span></div>
+<div class="kcb-section">开 场 白 选 择</div>
+<div class="kcb-grid">
+<div class="kcb-card" data-swipe="1"><div class="kcb-num">开场①</div><div class="kcb-card-title"><span class="dot"></span>第一次惩罚</div><div class="kcb-desc">放学后的旧器材室，贺曦的手指第一次越过了那条线。</div><div class="kcb-meta">高中·性欺负起点</div></div>
+<div class="kcb-card" data-swipe="2"><div class="kcb-num">开场②</div><div class="kcb-card-title"><span class="dot"></span>同居前夕</div><div class="kcb-desc">余额327块，贺曦的电话打进来要合租。</div><div class="kcb-meta">关系起点·两人独居</div></div>
+<div class="kcb-card" data-swipe="3"><div class="kcb-num">开场③</div><div class="kcb-card-title"><span class="dot"></span>牵手研究</div><div class="kcb-desc">"橙橙~牵我~"从研究到心动。</div><div class="kcb-meta">同居日常·甜蜜试探</div></div>
+<div class="kcb-card" data-swipe="4"><div class="kcb-num">开场④</div><div class="kcb-card-title"><span class="dot"></span>深夜告白</div><div class="kcb-desc">"如果有个人，喜欢了另一个人十年……"</div><div class="kcb-meta">关系突破·互相的</div></div>
+<div class="kcb-card" data-swipe="5"><div class="kcb-num">开场⑤</div><div class="kcb-card-title"><span class="dot"></span>三人重逢</div><div class="kcb-desc">黑色长发和粉色卷发站在门外。</div><div class="kcb-meta">四人同居·暗流涌动</div></div>
+</div>
+<div class="kcb-status" id="kcb-status-bar">↑ 点击卡片切换开场白</div>
+<div class="kcb-portraits" id="kcb-gallery">
+<div class="kcb-section" style="margin-bottom:10px">角 色 立 绘</div>
+<div class="kcb-gallery-tabs">
+<button class="kcb-gallery-tab active" data-stage="now">毕业三年后</button>
+<button class="kcb-gallery-tab" data-stage="college">大学时</button>
+<button class="kcb-gallery-tab" data-stage="highschool">高中时</button>
+<button class="kcb-gallery-tab" data-stage="bully">欺负苏橙</button>
+</div>
+<div class="kcb-portrait-grid" data-stage="now"><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/by3n-sucheng.png"><div class="kcb-portrait-name">苏橙</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/by3n-hexi.png"><div class="kcb-portrait-name">贺曦</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/by3n-shenmo.png"><div class="kcb-portrait-name">沈墨</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/by3n-zhongnian.png"><div class="kcb-portrait-name">钟念</div></div></div>
+<div class="kcb-portrait-grid" data-stage="college" style="display:none"><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/daxue-sucheng.png"><div class="kcb-portrait-name">苏橙</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/daxue-hexi.png"><div class="kcb-portrait-name">贺曦</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/daxue-shenmo.png"><div class="kcb-portrait-name">沈墨</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/daxue-zhongnian.png"><div class="kcb-portrait-name">钟念</div></div></div>
+<div class="kcb-portrait-grid" data-stage="highschool" style="display:none"><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/gaozhong-sucheng.png"><div class="kcb-portrait-name">苏橙</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/gaozhong-hexi.png"><div class="kcb-portrait-name">贺曦</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/gaozhong-shenmo.png"><div class="kcb-portrait-name">沈墨</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/gaozhong-zhongnian1.png"><div class="kcb-portrait-name">钟念</div></div></div>
+<div class="kcb-portrait-grid" data-stage="bully" style="display:none"><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/gaozhongqifu-dapigu.png"><div class="kcb-portrait-name">打屁股</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/gaozhongqifu-koujiao-hexi.png"><div class="kcb-portrait-name">口交·贺曦</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/gaozhongqifu-koujiao-shenmo.png"><div class="kcb-portrait-name">口交·沈墨</div></div><div class="kcb-portrait"><img src="https://raw.githubusercontent.com/wenyueluo/sillytraven/main/qcyx-cmdn/gaozhongqifu-koujiao-zhongnian.png"><div class="kcb-portrait-name">口交·钟念</div></div></div>
+</div>
+<input type="checkbox" id="img-check">
+<div class="kcb-img-modal"><label for="img-check" class="kcb-close-modal">×</label><div class="kcb-modal-inner"><img id="preview-img" src="" alt="大图"></div></div>
+</div>
+<script>
+(function(){function bpSet(k){localStorage.setItem('bp-theme',k);
+document.querySelectorAll('[data-bp]').forEach(function(el){el.classList.remove('pk','dk');if(k==='pink')el.classList.add('pk');else if(k==='dark')el.classList.add('dk')});
+document.querySelectorAll('.th-dot').forEach(function(d){d.classList.toggle('active',d.dataset.t===k)})}
+bpSet(localStorage.getItem('bp-theme')||'blue');
+document.querySelectorAll('.th-dot').forEach(function(b){b.addEventListener('click',function(){bpSet(this.dataset.t)})});
+var c=document.getElementById('kcb-particles'),cx=c.getContext('2d'),w=c.parentElement,pp=[],CT=50;
+function rs(){c.width=w.offsetWidth;c.height=w.offsetHeight}
+function sp(t){return{x:Math.random()*c.width,y:t?-10:Math.random()*c.height,vx:(Math.random()-.5)*.4,vy:Math.random()*.35+.18,l:Math.random()*4+3,a:Math.random()*.4+.12,rt:Math.random()*6.28,vr:(Math.random()-.5)*.04,ph:Math.random()*6.28,sw:Math.random()*.02+.008,c:['232,152,122','201,74,90','212,175,55'][Math.random()<.7?0:(Math.random()<.6?1:2)]}}
+function ip(){rs();pp=[];for(var i=0;i<CT;i++)pp.push(sp())}function lp(){cx.clearRect(0,0,c.width,c.height);for(var i=0;i<pp.length;i++){var p=pp[i];p.ph+=p.sw;p.x+=p.vx+Math.sin(p.ph)*.5;p.y+=p.vy;p.rt+=p.vr;if(p.y>c.height+12||p.x<-15||p.x>c.width+15){pp[i]=sp(true);continue}var aa=p.a+Math.sin(p.ph)*.08;if(aa<.04)aa=.04;if(aa>.6)aa=.6;cx.save();cx.translate(p.x,p.y);cx.rotate(p.rt);cx.beginPath();cx.ellipse(0,0,p.l,p.l*.42,0,0,6.28);cx.fillStyle='rgba('+p.c+','+aa+')';cx.fill();cx.restore()}requestAnimationFrame(lp)}
+ip();lp();window.addEventListener('resize',ip);
+var cd=document.querySelectorAll('.kcb-card[data-swipe]'),br=document.getElementById('kcb-status-bar'),bz=false;
+cd.forEach(function(c){c.addEventListener('click',async function(){if(bz)return;var s=parseInt(this.getAttribute('data-swipe'));var n=this.querySelector('.kcb-card-title').textContent.trim();bz=true;cd.forEach(function(x){x.classList.add('kcb-clicked')});br.textContent='⏳ '+n;br.className='kcb-status switching';try{await setChatMessages([{message_id:0,swipe_id:s}]);br.textContent='✅ 已切换';br.className='kcb-status switching'}catch(e){br.textContent='❌ 失败';br.className='kcb-status error';bz=false;cd.forEach(function(x){x.classList.remove('kcb-clicked')})};setTimeout(function(){if(bz){bz=false;cd.forEach(function(x){x.classList.remove('kcb-clicked')})}},5000)})});
+var pi=document.getElementById('preview-img'),ic=document.getElementById('img-check');
+document.querySelectorAll('#kcb-gallery .kcb-portrait').forEach(function(i){var im=i.querySelector('img');i.addEventListener('click',function(){pi.src=im.src;ic.checked=true})});
+var gl=document.getElementById('kcb-gallery'),gb=document.getElementById('kcb-gallery-toggle');
+gb.addEventListener('click',function(){gl.classList.toggle('open');gb.textContent=gl.classList.contains('open')?'✕ 收起':'🎨 立绘'});
+document.querySelectorAll('.kcb-gallery-tab').forEach(function(t){t.addEventListener('click',function(){var s=this.getAttribute('data-stage');document.querySelectorAll('.kcb-gallery-tab').forEach(function(x){x.classList.remove('active')});this.classList.add('active');document.querySelectorAll('#kcb-gallery .kcb-portrait-grid').forEach(function(g){g.style.display=g.getAttribute('data-stage')===s?'grid':'none'})})});
+})();
+</script>
+</body></html>
+```

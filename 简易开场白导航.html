@@ -1,0 +1,36 @@
+```html
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>开场白导航</title><style>
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:transparent}
+[data-bp]{--bg:linear-gradient(145deg,#f0f7ff,#e4f0fa 40%,#f5faff);--card:rgba(255,255,255,.82);--bd:rgba(150,200,240,.3);--txt:#2d4a6f;--txt2:#6a8aaa;--ac:#5b9bd5;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--txt);font-family:"Microsoft YaHei","Noto Serif SC",serif}
+[data-bp].pk{--bg:linear-gradient(145deg,#fef5f8,#fce8f0 40%,#fff5f8);--bd:rgba(232,135,168,.25);--ac:#e887a8}
+[data-bp].dk{--bg:linear-gradient(145deg,#1a1a2e,#16213e 40%,#1a1a2e);--card:rgba(30,30,50,.85);--bd:rgba(120,130,200,.22);--ac:#8b7cf0;--txt:#e0e0f0;--txt2:#a0a0c0}
+.nav-btn{padding:6px 14px;font-size:12px;border-radius:6px;border:1px solid var(--bd);background:var(--card);color:var(--txt2);cursor:pointer;transition:all .25s;letter-spacing:1px;font-family:"Microsoft YaHei",sans-serif}
+.nav-btn:hover,.nav-btn.active{border-color:var(--ac);color:var(--ac)}
+.nav-btn.back-btn{font-weight:600}.nav-line{width:2px;align-self:stretch;border-radius:2px;background:linear-gradient(180deg,var(--ac),var(--bd));opacity:.5;margin:0 4px}
+.th-dot{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--bd);cursor:pointer;margin-left:4px;transition:transform .2s;vertical-align:middle}
+.th-dot:hover{transform:scale(1.15)}.th-dot.active{border-color:var(--ac)!important}
+</style></head><body><div data-bp="1" id="nav-wrap">
+<div style="display:flex;gap:4px;margin-left:auto;order:-1;flex:1;justify-content:flex-end">
+<span class="th-dot" style="background:#5b9bd5" data-t="blue"></span>
+<span class="th-dot" style="background:#e887a8" data-t="pink"></span>
+<span class="th-dot" style="background:#8b7cf0" data-t="dark"></span>
+</div>
+<span class="nav-line" style="width:100%;height:1px;margin:0 0 4px;order:0"></span>
+<button class="nav-btn back-btn" onclick="setChatMessages([{message_id:0,swipe_id:0}])">← 倾橙映曦</button>
+<span class="nav-line"></span>
+</div>
+<script>
+(function(){function bpSet(k){localStorage.setItem('bp-theme',k);
+document.querySelectorAll('[data-bp]').forEach(function(el){el.classList.remove('pk','dk');if(k==='pink')el.classList.add('pk');else if(k==='dark')el.classList.add('dk')});
+document.querySelectorAll('.th-dot').forEach(function(d){d.classList.toggle('active',d.dataset.t===k)})}
+bpSet(localStorage.getItem('bp-theme')||'blue');
+document.querySelectorAll('.th-dot').forEach(function(b){b.addEventListener('click',function(){bpSet(this.dataset.t)})});
+var L=['第一次惩罚','同居前夕','牵手研究','深夜告白','三人重逢'];
+function render(){var cur=-1;try{var msgs=getChatMessages(getCurrentMessageId());if(msgs&&msgs.length){var txt=msgs[0].message||'';var m=txt.match(/开场白([①②③④⑤])/);if(m){var map={'①':1,'②':2,'③':3,'④':4,'⑤':5};cur=map[m[1]]||-1}}}catch(e){}
+var n=document.getElementById('nav-wrap');if(!n)return;
+var h='<button class="nav-btn back-btn" onclick="setChatMessages([{message_id:0,swipe_id:0}])">← 倾橙映曦</button><span class="nav-line"></span>';
+for(var i=0;i<5;i++){var num=i+1;h+='<button class="nav-btn'+(num===cur?' active':'')+'" onclick="setChatMessages([{message_id:0,swipe_id:'+num+'}])">'+L[i]+'</button>'}
+var dots=n.querySelector('.th-dot');if(dots)h+=dots.parentElement.outerHTML;n.innerHTML=h}
+$(function(){render()})})();
+</script></body></html>
+```

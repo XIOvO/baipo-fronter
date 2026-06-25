@@ -1,0 +1,31 @@
+<div data-bp="1" style="margin:10px 0;border-radius:10px;overflow:hidden;font-family:'Microsoft YaHei','Noto Serif SC',serif;position:relative">
+<style>
+[data-bp]{--bg:rgba(255,255,255,.78);--bd:rgba(150,200,240,.22);--ac:#5b9bd5;--txt:#6a8aaa;border:1px solid var(--bd);background:var(--bg)}
+[data-bp].pk{--bg:rgba(255,255,255,.78);--bd:rgba(232,135,168,.20);--ac:#e887a8;--txt:#996677}
+[data-bp].dk{--bg:rgba(30,30,50,.82);--bd:rgba(120,130,200,.16);--ac:#8b7cf0;--txt:#a0a0c0}
+[data-bp]::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--bd),var(--ac),var(--bd));opacity:.6}
+[data-bp] summary{display:flex;align-items:center;gap:8px;padding:10px 16px;cursor:pointer;font-size:13px;font-weight:600;color:var(--ac);letter-spacing:1px;list-style:none}
+[data-bp] summary::-webkit-details-marker,[data-bp] summary::marker{display:none}
+[data-bp] .bp-body{padding:12px 16px;font-size:13px;line-height:1.7;color:var(--txt);font-family:'Cascadia Code','Consolas','Microsoft YaHei',monospace;white-space:pre-wrap;word-break:break-word}
+.th-dot{display:inline-block;width:13px;height:13px;border-radius:50%;border:2px solid var(--bd);cursor:pointer;margin-left:3px;transition:transform .2s;vertical-align:middle}
+.th-dot:hover{transform:scale(1.15)}.th-dot.active{border-color:var(--ac)!important}
+</style>
+<details>
+<summary>
+<span>📄 倒念稿 · 变量更新</span>
+<span style="margin-left:auto;display:flex;gap:3px;align-items:center">
+<span class="th-dot" style="background:#5b9bd5" data-t="blue"></span>
+<span class="th-dot" style="background:#e887a8" data-t="pink"></span>
+<span class="th-dot" style="background:#8b7cf0" data-t="dark"></span>
+</span>
+</summary>
+<div class="bp-body">$1</div>
+</details>
+<script>
+(function(){function bpSet(k){localStorage.setItem('bp-theme',k);
+document.querySelectorAll('[data-bp]').forEach(function(el){el.classList.remove('pk','dk');if(k==='pink')el.classList.add('pk');else if(k==='dark')el.classList.add('dk')});
+document.querySelectorAll('.th-dot').forEach(function(d){d.classList.toggle('active',d.dataset.t===k)})}
+bpSet(localStorage.getItem('bp-theme')||'blue');
+document.querySelectorAll('.th-dot').forEach(function(b){b.addEventListener('click',function(){bpSet(this.dataset.t)})})})();
+</script>
+</div>

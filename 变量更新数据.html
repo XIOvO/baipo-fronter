@@ -1,0 +1,36 @@
+<div id="ba-pat-dtl" data-bp="1" style="width:85%;margin:18px auto;font-family:'Segoe UI','Microsoft YaHei','PingFang SC',sans-serif">
+<style>
+#ba-pat-dtl{--abg:rgba(91,155,213,.08);--bbg:rgba(255,255,255,.80);--bd:rgba(150,200,240,.25);--ac:#5b9bd5;--txt:#6a8aaa;background:var(--bbg);border:1px solid var(--bd);border-radius:12px;box-shadow:0 0 20px rgba(91,155,213,.06)}
+#ba-pat-dtl.pk{--abg:rgba(232,135,168,.08);--bbg:rgba(255,255,255,.80);--bd:rgba(232,135,168,.22);--ac:#e887a8;--txt:#996677}
+#ba-pat-dtl.dk{--abg:rgba(139,124,240,.08);--bbg:rgba(30,30,50,.82);--bd:rgba(120,130,200,.20);--ac:#8b7cf0;--txt:#a0a0c0}
+#ba-pat-dtl details summary{display:flex;align-items:center;gap:10px;padding:12px 22px;cursor:pointer;list-style:none;background:var(--abg);border-bottom:1px solid var(--bd);border-radius:12px 12px 0 0;font-size:13px;font-weight:600;color:var(--ac);letter-spacing:1px}
+#ba-pat-dtl[open] summary{border-radius:12px 12px 0 0}
+#ba-pat-dtl:not([open]) summary{border-radius:12px}
+#ba-pat-dtl details summary::-webkit-details-marker,#ba-pat-dtl details summary::marker{display:none}
+#ba-pat-dtl .bp-body{padding:16px 22px;color:var(--txt);font-size:13px;line-height:1.75;font-family:'Cascadia Code','Fira Code','Consolas','Microsoft YaHei',monospace;white-space:pre-wrap;word-break:break-word;max-height:320px;overflow-y:auto}
+#ba-pat-dtl .bp-body::-webkit-scrollbar{width:5px}#ba-pat-dtl .bp-body::-webkit-scrollbar-thumb{background:var(--ac);border-radius:3px}
+.th-dot{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--bd);cursor:pointer;margin-left:4px;transition:transform .2s;vertical-align:middle}
+.th-dot:hover{transform:scale(1.15)}.th-dot.active{border-color:var(--ac)!important;box-shadow:0 0 6px var(--ac)}
+</style>
+<details>
+<summary>
+<span>🔄 变量更新数据</span>
+<span style="margin-left:auto;display:flex;gap:4px;align-items:center">
+<span class="th-dot" style="background:#5b9bd5" data-t="blue"></span>
+<span class="th-dot" style="background:#e887a8" data-t="pink"></span>
+<span class="th-dot" style="background:#8b7cf0" data-t="dark"></span>
+</span>
+</summary>
+<div class="bp-body">$1</div>
+</details>
+<script>
+(function(){var r=document.querySelector('[data-bp]');if(!r)return;
+function bpSet(k){localStorage.setItem('bp-theme',k);
+document.querySelectorAll('[data-bp]').forEach(function(el){
+el.classList.remove('pk','dk');
+if(k==='pink')el.classList.add('pk');else if(k==='dark')el.classList.add('dk')});
+document.querySelectorAll('.th-dot').forEach(function(d){d.classList.toggle('active',d.dataset.t===k)})}
+bpSet(localStorage.getItem('bp-theme')||'blue');
+document.querySelectorAll('.th-dot').forEach(function(b){b.addEventListener('click',function(){bpSet(this.dataset.t)})})})();
+</script>
+</div>
